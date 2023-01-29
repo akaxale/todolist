@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #161a2b;
+  color: #fff;
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.app {   
+  margin-top: 3em;
+  padding: 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  margin-bottom: 1em;
+}
+
+button, 
+button:active, 
+button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+input, 
+input:active, 
+input:focus {
+  outline: none;
+}
+
+
+
+/* ============================ INPUT TASK FORM ============================ */
+
+
+
+.task-input {
+  background: transparent;
+  color: #fff;
+  padding: .2em 0.5em;
+  padding-right: .8em;
+  border: none;
+  border-bottom: 4px solid rgba(93, 12, 255, 1);
+  min-width: 450px;
+  transition: .3s;  
+}
+
+.add-task-btn:active {
+  box-shadow: 0px 1px 10px rgba(93, 12, 255, 1);
+  transform: scale(1.4);
+}
+
+.add-task-btn {
+  font-weight: bold;
+  background: linear-gradient(to right, #5c0b59, #4B0082);
+  background: linear-gradient(
+      90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  padding: 0.2em .5em;
+  border: none;
+  border-radius: 3px;
+  transform: scale(1.4);
+  transition: .3s;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1.5px;
+}
+
+.tasks-remaining {
+  margin: .7em 0;
+  font-size: 1.1rem;
+}
+
+
+
+/* ============================ LIST ============================ */
+
+
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  margin: auto;
+  transition: .5s;
+}
+
+.list-item {
+  position: relative;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin: .3em auto;
+  padding: .5em .8em;
+  width: 100%;
+  border: 2px solid rgba(93, 12, 255, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: .3s;
+}
+
+.label-task {
+  max-width: 200px;  
+  word-wrap:  break-word;
+  margin: 0 auto;
+}
+
+.checkbox {
+  opacity: 0;
+}
+
+.label-task::before {
+  content: '';
+  cursor: pointer;
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translateY(-50%) scale(1.1);
+  width: 15px;
+  height: 15px;
+  background-color: rgba(93, 12, 255, 1);
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  transition: .5s;
+}
+
+.checkbox:checked + .label-task::before {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR4nLWWvUoDQRDHf8bgB1qZgE+gqJ2Vrb0vIOoDaAJ2go1YiZWFjegLKFoJ1mohxq9SFB/EJBCFk4W5uA67dxd3MzDFzS7/385+3Az82hrwBLSAJNBbwCOwirKTCOKJx4/tTEzgE1gHKoRbBdgQTaO9gqSYCCS21US7gXUmoZlMAEtA2YpVRbuJtZchVgJuRecZmLHGuvoxQJvqArz3AzQtW2ODDmKDSsCdgnwAo7FB2wryBSyoOcGgWaCtQHuOeUGgstwuG/IGjPQKGgIW5QxctqsgHWDeM9cLMpAriZ2rB4gIdhRoJyN7L+hUiZxZsGHgVY2/OBZTCHTp+AOnme2reBuYy4BkgsYdb8P4DfCtYls5kEyQsTHr3+XzBjAYCsqDNYGpApBCoCxYvSCkMMgFuwYG/gNKC58pUj4zF+QQuAAme4D8KXwP8mFqfL9K+T3SEiXSSNRyMitqVdFK69RyOmBaoqyrHOJHehWmJTJvI1YDabS6mfwAnAkTNbIvMMEAAAAASUVORK5CYII=');
+  background-position:  center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-color:  #9966cc; 
+  background-color:  rgba(93, 12, 255, 1); 
+  border-radius: 4px;
+  font-weight: bold;
+  transform: scale(1.2) translateY(-45%);
+}
+
+.delete-task-btn {
+  max-height: 30px;
+  margin: auto 0;
+  padding: .2em .4em;
+  background: transparent;
+  color: rgba(93, 12, 255, 1);
+  border: none;
+  font-weight: bold;
+  transform: scale(1.4);
+}
+
+
+
+/* ============================ FOOTER ============================ */
+
+
+
+.footer {
+  margin: 1.5em auto;
+  min-width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-btn {
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: .5px;
+  transition: .5s;
+}
+
+.footer-btn:hover {
+  transform: scale(1.07);
+}
+
+
+
+@media (min-width: 750px) {    
+  .task-input {
+      min-width: 600px;
+  }
+  
+  .list {
+      max-width: 580px;
+  }
+}
+
+@media (max-width: 550px) {    
+  .task-input {
+      min-width: 280px;
+  }
+}
